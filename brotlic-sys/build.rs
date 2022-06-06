@@ -42,6 +42,7 @@ fn main() {
         .include("brotli/c/include")
         .define("BROTLI_BUILD_ENC_EXTRA_API", None)
         .warnings(false)
+        .flag_if_supported("-fcommon")
         .compile("brotli");
 
     println!("cargo:include={}", include_dir.display());
